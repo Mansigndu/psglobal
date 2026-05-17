@@ -241,7 +241,7 @@ footer.innerHTML = `
                             <a href="tel:+919876543210"
                                 class="text-gray-300 hover:text-[#D4AF37] transition duration-300">
 
-                                +91 98765 43210
+                               +91 77802 31836
 
                             </a>
 
