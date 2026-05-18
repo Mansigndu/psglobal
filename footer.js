@@ -25,7 +25,7 @@ footer.innerHTML = `
                 <a href="index.html"
                     class="flex items-center gap-3">
 
-                    <img src="./images/pslogo.jpeg"
+                    <img src="./images/logo.jpeg"
                         alt="PS Global Exports Logo"
                         class="w-16 h-16 rounded-full object-cover border border-[#D4AF37] p-[2px]">
 
@@ -151,6 +151,8 @@ footer.innerHTML = `
 
             <!-- PRODUCTS -->
             <div>
+            <a href="products.html"
+                class="hover:text-[#D4AF37] transition duration-300">
 
                 <h3
                     class="text-2xl font-semibold text-white mb-8">
@@ -186,6 +188,7 @@ footer.innerHTML = `
                     </li>
 
                 </ul>
+                </a>
 
             </div>
 
@@ -216,9 +219,15 @@ footer.innerHTML = `
 
                         <div>
 
-                            <p class="text-gray-300">
-                                India
-                            </p>
+                            <a href="https://maps.google.com/?q=Sunteck+Maxxworld+Naigaon+Mumbai"
+                                target="_blank"
+                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300 leading-7">
+
+                                Sunteck Maxxworld, Flat No 601 <br>
+                                Tower Lakeshore, Naigaon (E), <br>
+                                Mumbai 401208
+
+                            </a>
 
                         </div>
 
@@ -238,10 +247,10 @@ footer.innerHTML = `
 
                         <div>
 
-                            <a href="tel:+919876543210"
+                            <a href="tel:+918554817294"
                                 class="text-gray-300 hover:text-[#D4AF37] transition duration-300">
 
-                               +91 77802 31836
+                                +91 85548 17294
 
                             </a>
 
@@ -263,16 +272,46 @@ footer.innerHTML = `
 
                         <div>
 
-                            <a href="mailto:info@psglobalexports.com"
+                            <a href="mailto:contact@psglobalexports.co.in"
                                 class="text-gray-300 hover:text-[#D4AF37] transition duration-300 break-all">
 
-                                info@psglobalexports.com
+                                contact@psglobalexports.co.in
 
                             </a>
 
                         </div>
 
                     </div>
+
+
+
+                    <!-- WEBSITE -->
+                    <div class="flex gap-4">
+
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+
+                            <i class="ri-global-line text-[#D4AF37] text-xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.psglobalexports.co.in"
+                                target="_blank"
+                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300 break-all">
+
+                                www.psglobalexports.co.in
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    
 
                 </div>
 
