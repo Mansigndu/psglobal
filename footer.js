@@ -59,31 +59,9 @@ footer.innerHTML = `
                 </p>
 
 
-                <!-- SOCIAL -->
-                <div class="flex items-center gap-4 mt-8">
+                
 
-                    <a href="#"
-                        class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:text-black transition duration-300">
-
-                        <i class="ri-instagram-line text-xl"></i>
-
-                    </a>
-
-                    <a href="#"
-                        class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:text-black transition duration-300">
-
-                        <i class="ri-facebook-circle-line text-xl"></i>
-
-                    </a>
-
-                    <a href="#"
-                        class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:text-black transition duration-300">
-
-                        <i class="ri-linkedin-box-line text-xl"></i>
-
-                    </a>
-
-                </div>
+            
 
             </div>
 
