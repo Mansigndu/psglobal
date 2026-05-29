@@ -5,44 +5,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>About | NIRVANA Realty</title>
+    <title>About Us | PS Global Exports</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'premium-gold': '#C5A059',
-                        'premium-dark': '#0A1A2F',
-                        'premium-light': '#f8f8f8',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Google Font -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+
     <style>
-        body,html{
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body,
+        html {
             overflow-x: hidden;
         }
+
         body {
-            font-family: 'Inter', sans-serif;
+            background: #081120;
+            color: white;
             overflow-x: hidden;
         }
 
@@ -50,110 +45,197 @@
             scroll-behavior: smooth;
         }
 
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
         .hero-overlay {
             background: linear-gradient(to right,
-                    rgba(10, 26, 47, 0.88),
-                    rgba(10, 26, 47, 0.65));
+                    rgba(8, 17, 32, 0.95),
+                    rgba(8, 17, 32, 0.55));
         }
 
-        .gold-line {
-            width: 80px;
-            height: 3px;
-            background: #C5A059;
-            border-radius: 20px;
+        .floating {
+            animation: float 5s ease-in-out infinite;
         }
 
-        .feature-card:hover {
-            transform: translateY(-6px);
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
-        .mobile-link {
-            position: relative;
-        }
-
-        .mobile-link::after {
-            content: "";
+        .hero-circle {
             position: absolute;
-            left: 50%;
-            bottom: -8px;
-            width: 0%;
-            height: 2px;
-            background: #C5A059;
-            transition: 0.3s;
-            transform: translateX(-50%);
+            border-radius: 9999px;
+            filter: blur(100px);
+            opacity: 0.18;
         }
 
-        .mobile-link:hover::after {
-            width: 70%;
+        /* ===== LIGHTBOX ===== */
+        .clickable-img {
+            cursor: zoom-in;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .clickable-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+        }
+
+        #lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #lightbox-overlay.active {
+            display: flex;
+        }
+
+        #lightbox-overlay img {
+            max-width: 92vw;
+            max-height: 88vh;
+            border-radius: 20px;
+            object-fit: contain;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+            animation: lbZoom 0.35s cubic-bezier(.22, .68, 0, 1.2);
+        }
+
+        @keyframes lbZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.78);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        #lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            color: #D4AF37;
+            font-size: 26px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.3s;
+            z-index: 10000;
+        }
+
+        #lightbox-close:hover {
+            background: #D4AF37;
+            color: #000;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* ===== TEAM CARDS ===== */
+        .team-card {
+            position: relative;
+            border-radius: 35px;
+            overflow: hidden;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s ease;
+        }
+
+        @media(max-width:640px) {
+            .team-card img {
+                height: 340px;
+            }
+        }
+
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(8, 17, 32, 0.97) 60%, transparent);
+            padding: 30px 24px 24px;
         }
     </style>
 
 </head>
 
-<body class="bg-white text-gray-800">
+<body>
 
-   <div class="nav"></div>
 
-    
+    <!-- BACKGROUND BLUR -->
 
-    <!-- ================= HERO SECTION ================= -->
+    <div class="hero-circle bg-yellow-400 w-72 h-72 top-0 left-0"></div>
+    <div class="hero-circle bg-blue-500 w-72 h-72 bottom-0 right-0"></div>
 
-    <section
-        class="relative min-h-screen flex items-center bg-[url('./images/building2.jpeg')] bg-cover bg-center">
 
-        <!-- Overlay -->
+    <div class="nav"></div>
+
+
+    <!-- HERO -->
+
+    <section class="relative h-[75vh] flex items-center overflow-hidden">
+
+        <img src="./images/backgroundimage.jpg" class="absolute inset-0 w-full h-full object-cover" />
+
         <div class="absolute inset-0 hero-overlay"></div>
 
-        <!-- Content -->
-        <div
-            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
+        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-20">
 
-            <div class="max-w-3xl">
+            <div class="max-w-4xl" data-aos="fade-right">
 
-                <p
-                    class="uppercase tracking-[0.35em] text-premium-gold text-xs sm:text-sm mb-6">
-
-                    About NIRVANA Realty
-
+                <p class="uppercase tracking-[0.4em] mt-20 text-sm gold-text mb-5">
+                    About PS Global Exports
                 </p>
 
-                <h1
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-
-                    Building Premium <br class="hidden sm:block">
-                    Commercial Experiences
-
+                <h1 class="heading-font text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+                    Building Global Trade Through Quality & Trust
                 </h1>
 
-                <div class="gold-line mt-8"></div>
-
-                <p
-                    class="text-white/80 text-base sm:text-lg leading-relaxed mt-8 max-w-2xl">
-
-                    Delivering premium commercial spaces, luxury investments,
-                    and future-ready opportunities across Mumbai’s most promising
-                    growth corridors.
-
+                <p class="text-gray-300 text-lg leading-8 mt-8 max-w-2xl">
+                    We deliver premium Indian products to international markets with excellence,
+                    reliability and long-term business relationships.
                 </p>
-
-                <div
-                    class="flex flex-col sm:flex-row gap-4 mt-10">
-
-                    <a href="properties.html"
-                        class="bg-premium-gold text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition duration-300 text-center">
-
-                        Explore Properties
-
-                    </a>
-
-                    <a href="contact.html"
-                        class="border border-white/30 text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300 text-center">
-
-                        Contact Us
-
-                    </a>
-
-                </div>
 
             </div>
 
@@ -161,127 +243,54 @@
 
     </section>
 
-    <!-- ================= ABOUT SECTION ================= -->
 
-    <section class="py-20 sm:py-24 bg-white">
+    <!-- COMPANY STORY -->
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-24 lg:py-32">
 
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-                <!-- IMAGE -->
-                <div class="relative">
+            <div class="flex flex-wrap gap-10 items-center">
 
-                    <img src="images/building.jpeg"
-                        alt="About NIRVANA"
-                        class="rounded-3xl shadow-2xl w-full h-[350px] sm:h-[500px] lg:h-[600px] object-cover">
 
-                    <!-- EXPERIENCE BOX -->
-                    <div
-                        class="absolute bottom-4 right-4 sm:-bottom-8 sm:-right-8 bg-premium-dark text-white px-6 py-5 sm:p-8 rounded-3xl shadow-2xl">
-
-                        <h3 class="text-3xl sm:text-5xl font-bold text-premium-gold">
-                            6+
-                        </h3>
-
-                        <p class="text-white/70 mt-2 text-sm sm:text-base">
-                            Years Experience
-                        </p>
-
-                    </div>
+                <!-- Founder Image -->
+                <div class=" shadow-2xl" data-aos="fade-right">
+                    <img src="./images/newimages/poonam.jpeg"
+                        class="clickable-img md:h-[600px] rounded-2xl" />
 
                 </div>
 
-                <!-- CONTENT -->
-                <div>
 
-                    <p
-                        class="uppercase tracking-[0.3em] text-premium-gold text-sm mb-5">
 
-                        Who We Are
+                <!-- Content -->
+                <div data-aos="fade-left" class="w-[700px]">
 
+                    <p class="uppercase tracking-[0.4em] text-sm gold-text mb-5">
+                        Our Story
                     </p>
 
-                    <h2
-                        class="text-3xl sm:text-4xl md:text-5xl font-bold text-premium-dark leading-tight">
-
-                        Premium Real Estate <br>
-                        With Trust & Vision
-
+                    <h2 class="heading-font text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                        Delivering Indian Excellence To Global Markets
                     </h2>
 
-                    <div class="gold-line mt-6"></div>
+                    <p class="text-gray-300 leading-8 mt-8 text-lg">
 
-                    <p
-                        class="text-gray-500 mt-8 leading-relaxed text-base sm:text-lg">
+                        Established in 2025, PS Global Exports delivers premium Indian
+                        products to international markets with trust, quality and
+                        reliable export solutions.
 
-                        NIRVANA Realty specializes in premium commercial and
-                        retail properties located in Mumbai’s high-growth
-                        micro-markets. We focus on delivering investment-worthy
-                        spaces with long-term value and unmatched visibility.
-
-                    </p>
-
-                    <p
-                        class="text-gray-500 mt-5 leading-relaxed text-base sm:text-lg">
-
-                        Our expertise lies in identifying strategic assets
-                        near educational hubs, residential communities,
-                        and future infrastructure developments.
+                        We specialize in textiles, herbal products, gemstones,
+                        beauty essentials and handcrafted lifestyle collections.
 
                     </p>
 
-                    <!-- FEATURES -->
-                    <div
-                        class="grid sm:grid-cols-2 gap-6 mt-10">
+                    <p class="text-gray-300 text-lg leading-8 mt-6">
 
-                        <!-- CARD -->
-                        <div
-                            class="feature-card bg-gray-50 p-6 rounded-3xl transition duration-300 hover:shadow-xl">
+                        We believe in quality assurance, ethical sourcing,
+                        competitive pricing and long-term international
+                        business partnerships.
 
-                            <i
-                                class="fas fa-building text-premium-gold text-4xl"></i>
-
-                            <h3
-                                class="text-xl font-semibold mt-5 text-premium-dark">
-
-                                Premium Properties
-
-                            </h3>
-
-                            <p class="text-gray-500 mt-3 leading-relaxed">
-
-                                Carefully selected commercial spaces with
-                                strong ROI potential and premium visibility.
-
-                            </p>
-
-                        </div>
-
-                        <!-- CARD -->
-                        <div
-                            class="feature-card bg-gray-50 p-6 rounded-3xl transition duration-300 hover:shadow-xl">
-
-                            <i
-                                class="fas fa-chart-line text-premium-gold text-4xl"></i>
-
-                            <h3
-                                class="text-xl font-semibold mt-5 text-premium-dark">
-
-                                Smart Investments
-
-                            </h3>
-
-                            <p class="text-gray-500 mt-3 leading-relaxed">
-
-                                Market-driven investment opportunities
-                                in rapidly developing areas.
-
-                            </p>
-
-                        </div>
-
-                    </div>
+                    </p>
 
                 </div>
 
@@ -290,439 +299,307 @@
         </div>
 
     </section>
-    
 
-<!-- ================= OUR PROJECTS ================= -->
 
-<section class="py-24 bg-gray-50">
+    <!-- TEAM SECTION -->
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-24 lg:py-32 bg-[#0d1728]">
 
-        <!-- HEADING -->
-        <div class="text-center mb-16">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-            <p class="uppercase tracking-[0.3em] text-premium-gold text-sm mb-4">
-                Our Projects
-            </p>
+            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                <p class="uppercase tracking-[0.4em] text-sm gold-text">Our Team</p>
+                <h2 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 leading-tight">
+                    The People Behind PS Global
+                </h2>
+            </div>
 
-            <h2 class="text-4xl md:text-5xl font-bold text-premium-dark">
-                Featured Developments
-            </h2>
+            <div class="grid sm:grid-cols-2 gap-10 mt-20 max-w-3xl mx-auto">
 
-            <p class="text-gray-500 mt-5 max-w-3xl mx-auto leading-relaxed text-lg">
-                Discover premium residential and commercial developments
-                crafted for luxury lifestyle, strategic investment,
-                and long-term growth opportunities.
-            </p>
-
-        </div>
-
-        <!-- PROJECT GRID -->
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <!-- PROJECT 1 -->
-            <div onclick="openPopup(
-'Abhinandan Lodha',
-'Naigaon East, Mumbai',
-'A thoughtfully planned township offering premium lifestyle residences, landscaped open spaces, modern amenities, and excellent connectivity for comfortable urban living.',
-'images/building2.jpeg'
-)"
-class="cursor-pointer bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
-
-                <!-- IMAGE -->
-                <div class="overflow-hidden">
-                    <img src="images/building2.jpeg"
-                        alt="Abhinandan Lodha"
-                        class="w-full h-80 object-cover hover:scale-105 transition duration-500">
-                </div>
-
-                <!-- CONTENT -->
-                <div class="p-8">
-
-                    <h3 class="text-3xl font-semibold text-premium-dark">
-                        Abhinandan Lodha
-                    </h3>
-
-                    <p class="text-premium-gold font-medium mt-2">
-                        Naigaon East, Mumbai
-                    </p>
-
-                    <p class="text-gray-500 mt-5 leading-relaxed">
-                        A thoughtfully planned township offering premium
-                        lifestyle residences, landscaped open spaces,
-                        modern amenities, and excellent connectivity
-                        for comfortable urban living.
-                    </p>
-
-                    <!-- FEATURES -->
-                    <div class="mt-7 space-y-4">
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Prime Connectivity
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-building text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Modern Infrastructure
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-tree text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Open Green Spaces
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-star text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Luxury Lifestyle Amenities
-                            </span>
-                        </div>
-
+                <!-- Poonam Card -->
+                <div class="team-card shadow-2xl" data-aos="zoom-in">
+                    <img src="./images/newimages/poonam.jpeg" alt="Poonam Gautam" class="clickable-img"
+                        onclick="openLightbox(this.src)" />
+                    <div class="team-card-info">
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Founder&CEO</p>
+                        <h3 class="text-xl font-semibold gold-text mt-1">Poonam Gautam</h3>
                     </div>
-
                 </div>
 
-            </div>
-
-            <!-- PROJECT 2 -->
-           <div onclick="openPopup(
-'Sunteck One World',
-'Naigaon, Mumbai',
-'Modern residential development offering premium lifestyle spaces, open surroundings, and seamless urban connectivity.',
-'images/building.jpeg'
-)"
-class="cursor-pointer bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
-
-                <!-- IMAGE -->
-                <div class="overflow-hidden">
-                    <img src="images/building.jpeg"
-                        alt="Sunteck One World"
-                        class="w-full h-80 object-cover hover:scale-105 transition duration-500">
-                </div>
-
-                <!-- CONTENT -->
-                <div class="p-8">
-
-                    <h3 class="text-3xl font-semibold text-premium-dark">
-                        Sunteck One World
-                    </h3>
-
-                    <p class="text-premium-gold font-medium mt-2">
-                        Naigaon, Mumbai
-                    </p>
-
-                    <p class="text-gray-500 mt-5 leading-relaxed">
-                        Premium residential development designed with
-                        spacious layouts, lifestyle amenities,
-                        green surroundings, and seamless access
-                        to major city destinations.
-                    </p>
-
-                    <!-- FEATURES -->
-                    <div class="mt-7 space-y-4">
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-city text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Modern Urban Living
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-dumbbell text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Lifestyle Amenities
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-road text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Excellent Connectivity
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-leaf text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Green Open Spaces
-                            </span>
-                        </div>
-
+                <!-- Sachin Kamath Card -->
+                <div class="team-card shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="./images/newimages/Sachin-Kamath.jpeg" alt="Sachin Kamath" class="clickable-img"
+                        onclick="openLightbox(this.src)" />
+                    <div class="team-card-info">
+                        <p class="text-gray-400 text-xs uppercase tracking-widest">Managing Director</p>
+                        <h3 class="text-xl font-semibold gold-text mt-1">Sachin Kamath</h3>
                     </div>
-
                 </div>
 
-            </div>
-
-            <!-- PROJECT 3 -->
-           
-<div onclick="openPopup(
-'Navkar',
-'Premium Commercial Spaces',
-'Commercial developments crafted for business growth with strategic visibility, modern infrastructure and strong investment potential.',
-'./images/card6.jpeg'
-)"
-class="cursor-pointer bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2">
-
-    <!-- IMAGE -->
-    <div class="overflow-hidden">
-        <img src="./images/card6.jpeg"
-            alt="Navkar"
-            class="w-full h-80 object-cover hover:scale-105 transition duration-500">
-    </div>
-
-    <!-- CONTENT -->
-    <div class="p-8">
-
-        <h3 class="text-3xl font-semibold text-premium-dark">
-            Navkar
-        </h3>
-
-        <p class="text-premium-gold font-medium mt-2">
-            Premium Commercial Spaces
-        </p>
-
-        <p class="text-gray-500 mt-5 leading-relaxed">
-            Commercial developments built for business growth,
-            offering strategic locations, premium visibility,
-            and future-focused investment opportunities.
-        </p>
-
-        <!-- FEATURES (POINTS ADDED) -->
-        <div class="mt-7 space-y-4">
-
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-briefcase text-premium-gold"></i>
-                <span class="text-gray-700">
-                    Business Ready Spaces
-                </span>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-chart-line text-premium-gold"></i>
-                <span class="text-gray-700">
-                    High Investment Potential
-                </span>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-location-dot text-premium-gold"></i>
-                <span class="text-gray-700">
-                    Prime Strategic Location
-                </span>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-building text-premium-gold"></i>
-                <span class="text-gray-700">
-                    Modern Infrastructure
-                </span>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-            <!-- PROJECT 4 -->
-            <div onclick="openPopup(
-'Nakshatra JSB Group',
-'Modern Residential Development',
-'Contemporary residential spaces designed for comfort, connectivity, and premium urban lifestyle.',
-'./images/bgnakshatra.jpg'
-)"
-class="cursor-pointer bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
-
-                <div class="overflow-hidden">
-                    <img src="./images/bgnakshatra.jpg"
-                        alt="Nakshatra JSB Group"
-                        class="w-full h-80 object-cover hover:scale-105 transition duration-500">
-                </div>
-
-                <div class="p-8">
-
-                    <h3 class="text-3xl font-semibold text-premium-dark">
-                        Nakshatra JSB Group
-                    </h3>
-
-                    <p class="text-premium-gold font-medium mt-2">
-                        Modern Residential Development
-                    </p>
-
-                    <p class="text-gray-500 mt-5 leading-relaxed">
-                        Thoughtfully designed residential spaces combining
-                        comfort, connectivity, and contemporary architecture
-                        for elevated modern living experiences.
-                    </p>
-
-                    <div class="mt-7 space-y-4">
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-house text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Contemporary Homes
-                            </span>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-star text-premium-gold"></i>
-                            <span class="text-gray-700">
-                                Premium Lifestyle
-                            </span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- ================= STATS ================= -->
-
-    <section class="bg-premium-dark py-20">
-
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-
-            <div>
-                <h2 class="text-4xl sm:text-5xl font-bold text-premium-gold">
-                    5000+
-                </h2>
-
-                <p class="text-white/70 mt-3 text-sm sm:text-base">
-                    Happy Clients
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-4xl sm:text-5xl font-bold text-premium-gold">
-                    7+
-                </h2>
-
-                <p class="text-white/70 mt-3 text-sm sm:text-base">
-                    Projects Delivered
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-4xl sm:text-5xl font-bold text-premium-gold">
-                    6+
-                </h2>
-
-                <p class="text-white/70 mt-3 text-sm sm:text-base">
-                    Years Experience
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-4xl sm:text-5xl font-bold text-premium-gold">
-                    100%
-                </h2>
-
-                <p class="text-white/70 mt-3 text-sm sm:text-base">
-                    Client Satisfaction
-                </p>
             </div>
 
         </div>
 
     </section>
 
-    <!-- ================= FOOTER ================= -->
 
-<div class="footer"></div>
-<script src="./footer.js"></script>
-<script src="./nav.js"></script>
-<!-- ================= PROJECT POPUP ================= -->
+    <!-- MISSION VISION -->
 
-<!-- POPUP START -->
-<div id="projectPopup"
-    class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-[999] px-4">
+    <section class="py-24 lg:py-32 bg-[#0d1728]">
 
-    <!-- 🔴 YE WALA DIV -->
-    <div class="bg-white max-w-2xl w-full rounded-3xl overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <!-- CLOSE BUTTON -->
-        <button onclick="closePopup()">✕</button>
+            <div class="grid lg:grid-cols-2 gap-10">
 
-        <!-- IMAGE -->
-        <img id="popupImage" class="w-full max-h-[500px] object-contain bg-white">
+                <!-- Mission -->
+                <div class="glass rounded-[35px] p-10 hover:-translate-y-3 transition duration-500" data-aos="fade-up">
 
-        <!-- CONTENT -->
-        <div class="p-8">
-            <h2 id="popupTitle"></h2>
-            <p id="popupLocation"></p>
-            <p id="popupDescription"></p>
+                    <div class="w-20 h-20 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
+                        <i class="ri-focus-3-line text-4xl gold-text"></i>
+                    </div>
+
+                    <h3 class="heading-font text-4xl font-bold mt-8">
+                        Our Mission
+                    </h3>
+
+                    <p class="text-gray-300 leading-8 text-lg mt-6">
+                        To connect global buyers with high-quality Indian products while maintaining
+                        excellence, trust and customer satisfaction.
+                    </p>
+
+                </div>
+
+
+                <!-- Vision -->
+                <div class="glass rounded-[35px] p-10 hover:-translate-y-3 transition duration-500" data-aos="fade-up"
+                    data-aos-delay="200">
+
+                    <div class="w-20 h-20 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
+                        <i class="ri-eye-line text-4xl gold-text"></i>
+                    </div>
+
+                    <h3 class="heading-font text-4xl font-bold mt-8">
+                        Our Vision
+                    </h3>
+
+                    <p class="text-gray-300 leading-8 text-lg mt-6">
+                        To become a globally trusted export company known for premium products,
+                        ethical business and long-term international relationships.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
 
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="py-24 lg:py-32">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+
+                <p class="uppercase tracking-[0.4em] text-sm gold-text">
+                    Why Choose Us
+                </p>
+
+                <h2 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 leading-tight">
+                    Export Excellence With Global Standards
+                </h2>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+
+                <div class="glass rounded-[30px] p-8 hover:-translate-y-3 transition duration-500" data-aos="zoom-in">
+
+                    <i class="ri-award-line text-5xl gold-text"></i>
+
+                    <h3 class="text-2xl font-semibold mt-6">
+                        Premium Quality
+                    </h3>
+
+                </div>
+
+
+                <div class="glass rounded-[30px] p-8 hover:-translate-y-3 transition duration-500" data-aos="zoom-in"
+                    data-aos-delay="200">
+
+                    <i class="ri-global-line text-5xl gold-text"></i>
+
+                    <h3 class="text-2xl font-semibold mt-6">
+                        Worldwide Export
+                    </h3>
+
+                </div>
+
+
+                <div class="glass rounded-[30px] p-8 hover:-translate-y-3 transition duration-500" data-aos="zoom-in"
+                    data-aos-delay="400">
+
+                    <i class="ri-shield-check-line text-5xl gold-text"></i>
+
+                    <h3 class="text-2xl font-semibold mt-6">
+                        Trusted Service
+                    </h3>
+
+                </div>
+
+
+                <div class="glass rounded-[30px] p-8 hover:-translate-y-3 transition duration-500" data-aos="zoom-in"
+                    data-aos-delay="600">
+
+                    <i class="ri-customer-service-line text-5xl gold-text"></i>
+
+                    <h3 class="text-2xl font-semibold mt-6">
+                        24/7 Support
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="py-24 lg:py-32 bg-[#0d1728] overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="glass rounded-[30px] p-10 text-center floating" data-aos="fade-up">
+
+                    <h3 class="text-5xl font-bold gold-text">20+</h3>
+
+                    <p class="text-gray-300 mt-4 text-lg">
+                        Export Countries
+                    </p>
+
+                </div>
+
+                <div class="glass rounded-[30px] p-10 text-center floating" data-aos="fade-up" data-aos-delay="200">
+
+                    <h3 class="text-5xl font-bold gold-text">100+</h3>
+
+                    <p class="text-gray-300 mt-4 text-lg">
+                        Premium Products
+                    </p>
+
+                </div>
+
+                <div class="glass rounded-[30px] p-10 text-center floating" data-aos="fade-up" data-aos-delay="400">
+
+                    <h3 class="text-5xl font-bold gold-text">99%</h3>
+
+                    <p class="text-gray-300 mt-4 text-lg">
+                        Client Satisfaction
+                    </p>
+
+                </div>
+
+                <div class="glass rounded-[30px] p-10 text-center floating" data-aos="fade-up" data-aos-delay="600">
+
+                    <h3 class="text-5xl font-bold gold-text">24/7</h3>
+
+                    <p class="text-gray-300 mt-4 text-lg">
+                        Global Support
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="py-24 lg:py-32">
+
+        <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="glass rounded-[40px] p-10 sm:p-14 lg:p-16 text-center" data-aos="zoom-in">
+
+                <p class="uppercase tracking-[0.4em] text-sm gold-text">
+                    Global Partnerships
+                </p>
+
+                <h2 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 leading-tight">
+                    Let’s Build International Business Together
+                </h2>
+
+                <p class="text-gray-300 text-lg leading-8 mt-8 max-w-3xl mx-auto">
+                    Partner with PS Global Exports for premium products,
+                    trusted export solutions and worldwide delivery.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-5 mt-10">
+
+                    <a href="contact.html"
+                        class="bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold px-10 py-4 rounded-full transition duration-300 hover:scale-105">
+                        Send Inquiry
+                    </a>
+
+                    <a href="products.html"
+                        class="border border-white/20 hover:border-[#D4AF37] hover:text-[#D4AF37] px-10 py-4 rounded-full transition duration-300">
+                        View Products
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Full image view" onclick="closeLightbox()">
+        <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times</button>
+        <img id="lightbox-img" src="" alt="Full view" onclick="event.stopPropagation()" />
     </div>
 
-</div>
-<!-- POPUP END -->
-   
+    <!-- FOOTER -->
+
+    <div class="footer"></div>
+    <script src="nav.js"></script>
+    <script src="footer.js"></script>
+
+
+    <!-- AOS -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox-overlay').classList.remove('active');
+            document.getElementById('lightbox-img').src = '';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+
 </body>
-<script>
-
-function openPopup(title, location, description, image) {
-
-    document.getElementById('projectPopup')
-        .classList.remove('hidden');
-
-    document.getElementById('projectPopup')
-        .classList.add('flex');
-
-    document.getElementById('popupTitle')
-        .innerText = title;
-
-    document.getElementById('popupLocation')
-        .innerText = location;
-
-    document.getElementById('popupDescription')
-        .innerText = description;
-
-    document.getElementById('popupImage')
-        .src = image;
-}
-
-function closePopup() {
-
-    document.getElementById('projectPopup')
-        .classList.add('hidden');
-
-    document.getElementById('projectPopup')
-        .classList.remove('flex');
-}
-function outsideClose(event) {
-
-    if (event.target.id === "projectPopup") {
-        closePopup();
-    }
-}
-
-window.addEventListener('scroll', () => {
-
-    const popup = document.getElementById('projectPopup');
-
-    if (!popup.classList.contains('hidden')) {
-        closePopup();
-    }
-
-});
-
-</script>
 
 </html>

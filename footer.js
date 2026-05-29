@@ -1,128 +1,295 @@
-const footer=document.querySelector('.footer');
+const footer = document.querySelector(".footer");
 
-footer.innerHTML=`
+footer.innerHTML = `
 
-<footer class="bg-black text-white py-12">
+<footer class="relative border-t border-white/10 bg-[#07101d] overflow-hidden">
 
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <!-- Blur Effects -->
+    <div
+        class="absolute top-0 left-0 w-72 h-72 bg-yellow-500/10 rounded-full blur-[120px]">
+    </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
+    <div
+        class="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px]">
+    </div>
 
-            <!-- BRAND -->
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
+
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
+
+
+            <!-- COMPANY INFO -->
             <div>
 
-                <h2 class="text-3xl font-semibold tracking-[0.2em]">
-                    NIRVANA
-                </h2>
+                <a href="index.html"
+                    class="flex items-center gap-3">
 
-                <p class="text-white/60 mt-5 leading-relaxed">
-                    Premium commercial spaces crafted for modern businesses and investments.
+                    <img src="./images/logo.jpeg"
+                        alt="PS Global Exports Logo"
+                        class="w-16 h-16 rounded-full object-cover border border-[#D4AF37] p-[2px]">
+
+                    <div>
+
+                        <h2
+                            class="heading-font text-2xl font-bold tracking-[0.18em] text-white">
+
+                            PS <span class="gold-text">GLOBAL</span>
+
+                        </h2>
+
+                        <p
+                            class="text-[11px] uppercase tracking-[0.35em] text-gray-400 mt-1">
+
+                            EXPORTS
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <p class="text-gray-400 leading-8 mt-8">
+
+                    Delivering premium export products worldwide with
+                    quality assurance, trusted logistics and long-term
+                    business partnerships.
+
                 </p>
 
+
+                
+
+            
+
             </div>
+
+
 
             <!-- QUICK LINKS -->
             <div>
 
-                <h3 class="text-3xl font-semibold mb-5">
+                <h3
+                    class="text-2xl font-semibold text-white mb-8">
+
                     Quick Links
+
                 </h3>
 
-                <div class="flex flex-col gap-3 text-white/70">
+                <ul class="space-y-5 text-gray-400">
 
-                    <a href="index.html" class="hover:text-premium-gold transition">
-                        Home
-                    </a>
+                    <li>
+                        <a href="index.html"
+                            class="hover:text-[#D4AF37] transition duration-300">
+                            Home
+                        </a>
+                    </li>
 
-                    <a href="properties.html" class="hover:text-premium-gold transition">
-                        Properties
-                    </a>
+                    <li>
+                        <a href="about.html"
+                            class="hover:text-[#D4AF37] transition duration-300">
+                            About Us
+                        </a>
+                    </li>
 
-                    <a href="about.html" class="hover:text-premium-gold transition">
-                        About
-                    </a>
+                    <li>
+                        <a href="products.html"
+                            class="hover:text-[#D4AF37] transition duration-300">
+                            Products
+                        </a>
+                    </li>
 
-                    <a href="gallery.html" class="hover:text-premium-gold transition">
-                        Gallery
-                    </a>
+                    <li>
+                        <a href="services.html"
+                            class="hover:text-[#D4AF37] transition duration-300">
+                            Services
+                        </a>
+                    </li>
 
-                    <a href="contact.html" class="hover:text-premium-gold transition">
-                        Contact
-                    </a>
+                    <li>
+                        <a href="gallery.html"
+                            class="hover:text-[#D4AF37] transition duration-300">
+                            Gallery
+                        </a>
+                    </li>
 
-                </div>
+                    <li>
+                        <a href="contact.html"
+                            class="hover:text-[#D4AF37] transition duration-300">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
 
             </div>
+
+
+
+            <!-- PRODUCTS -->
+            <div>
+            <a href="products.html"
+                class="hover:text-[#D4AF37] transition duration-300">
+
+                <h3
+                    class="text-2xl font-semibold text-white mb-8">
+
+                    Our Products
+
+                </h3>
+
+                <ul class="space-y-5 text-gray-400">
+
+                    <li class="hover:text-[#D4AF37] transition duration-300">
+                        Herbal Powders
+                    </li>
+
+                    <li class="hover:text-[#D4AF37] transition duration-300">
+                        Textile Essentials
+                    </li>
+
+                    <li class="hover:text-[#D4AF37] transition duration-300">
+                        Gemstones & Jewellery
+                    </li>
+
+                    <li class="hover:text-[#D4AF37] transition duration-300">
+                        Beauty Products
+                    </li>
+
+                    <li class="hover:text-[#D4AF37] transition duration-300">
+                        Fashion Apparel
+                    </li>
+
+                    <li class="hover:text-[#D4AF37] transition duration-300">
+                        Handcrafted Decor
+                    </li>
+
+                </ul>
+                </a>
+
+            </div>
+
+
 
             <!-- CONTACT INFO -->
             <div>
 
-                <h3 class="text-3xl font-semibold mb-5">
+                <h3
+                    class="text-2xl font-semibold text-white mb-8">
+
                     Contact Info
+
                 </h3>
 
-                <div class="space-y-5">
+                <div class="space-y-6">
 
-                    <!-- PHONE -->
-                    <div class="flex items-start gap-4">
-
-                        <div class="text-premium-gold text-lg mt-1">
-                            <i class="fas fa-phone"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-sm text-white/40 mb-1">
-                                Phone
-                            </p>
-
-                            <a href="tel:+918286834867"
-                                class="text-white/70 hover:text-premium-gold transition">
-                                +91 82868 34867
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <!-- EMAIL -->
-                    <div class="flex items-start gap-4">
-
-                        <div class="text-premium-gold text-lg mt-1">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-sm text-white/40 mb-1">
-                                Email
-                            </p>
-
-                            <a href="mailto:contact@nirvanaproperties.in"
-                                class="text-white/70 hover:text-premium-gold transition break-all">
-                                contact@nirvanaproperties.in
-                            </a>
-                        </div>
-
-                    </div>
 
                     <!-- ADDRESS -->
-                    <div class="flex items-start gap-4">
+                    <div class="flex gap-4">
 
-                        <div class="text-premium-gold text-lg mt-1">
-                            <i class="fas fa-location-dot"></i>
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+
+                            <i class="ri-map-pin-line text-[#D4AF37] text-xl"></i>
+
                         </div>
 
                         <div>
-                            <p class="text-sm text-white/40 mb-1">
-                                Address
-                            </p>
 
-                            <p class="text-white/60 leading-relaxed">
-                                Gala no.1, Jai Vijay Nagdi Apt.,<br>
-                                Opposite Seven Square School,<br>
-                                Naigaon East, Mumbai
-                            </p>
+                            <a href="https://maps.google.com/?q=Sunteck+Maxxworld+Naigaon+Mumbai"
+                                target="_blank"
+                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300 leading-7">
+
+                                Sunteck Maxxworld, Flat No 601 <br>
+                                Tower Lakeshore, Naigaon (E), <br>
+                                Mumbai 401208
+
+                            </a>
+
                         </div>
 
                     </div>
+
+
+
+                    <!-- PHONE -->
+                    <div class="flex gap-4">
+
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+
+                            <i class="ri-phone-line text-[#D4AF37] text-xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <a href="tel:+918554817294"
+                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300">
+
+                                +91 85548 17294
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+                    <div class="flex gap-4">
+
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+
+                            <i class="ri-mail-line text-[#D4AF37] text-xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <a href="mailto:contact@psglobalexports.co.in"
+                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300 break-all">
+
+                                contact@psglobalexports.co.in
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- WEBSITE -->
+                    <div class="flex gap-4">
+
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+
+                            <i class="ri-global-line text-[#D4AF37] text-xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.psglobalexports.co.in"
+                                target="_blank"
+                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300 break-all">
+
+                                www.psglobalexports.co.in
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    
 
                 </div>
 
@@ -130,8 +297,38 @@ footer.innerHTML=`
 
         </div>
 
-        <div class="border-t border-white/10 mt-12 pt-6 text-center text-white/50 text-sm">
-            © 2026 NIRVANA Realty. All Rights Reserved.
+
+
+        <!-- BOTTOM FOOTER -->
+        <div
+            class="border-t border-white/10 mt-14 pt-8 flex flex-col lg:flex-row gap-5 justify-between items-center">
+
+            <p class="text-gray-500 text-center">
+
+                © 2026 PS Global Exports. All Rights Reserved.
+
+            </p>
+
+            <div
+                class="flex flex-wrap justify-center gap-6 text-gray-500 text-sm">
+
+                <a href="#"
+                    class="hover:text-[#D4AF37] transition duration-300">
+                    Privacy Policy
+                </a>
+
+                <a href="#"
+                    class="hover:text-[#D4AF37] transition duration-300">
+                    Terms & Conditions
+                </a>
+
+                <a href="#"
+                    class="hover:text-[#D4AF37] transition duration-300">
+                    Support
+                </a>
+
+            </div>
+
         </div>
 
     </div>
