@@ -329,101 +329,77 @@
     </section>
 <!-- ================= TEAM SECTION ================= -->
 
-<section class="py-20 sm:py-24 bg-gray-50 overflow-hidden">
+<!-- TEAM CARDS -->
+<div class="flex flex-col gap-10 max-w-6xl mx-auto">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- TOP 2 CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 
-        <!-- HEADING -->
-        <div class="text-center mb-14 sm:mb-16 animate-fadeUp">
+        <!-- OWNER CARD -->
+        <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slideLeft">
 
-            <p class="uppercase tracking-[0.3em] text-premium-gold text-xs sm:text-sm mb-4 sm:mb-5">
-                Leadership Team
-            </p>
+            <!-- IMAGE -->
+            <div class="overflow-hidden relative">
 
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-premium-dark leading-tight">
-                Meet The Team
-            </h2>
+                <img src="images/santosh.jpeg"
+                    alt="Santosh Yadav"
+                    class="w-full h-[300px] sm:h-[380px] lg:h-[420px] object-top object-cover group-hover:scale-105 transition duration-700">
 
-            <p class="text-gray-500 mt-5 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-                Experienced professionals committed to delivering premium commercial spaces,
-                trusted investment opportunities, and modern real estate solutions.
-            </p>
-
-        </div>
-
-        <!-- TEAM CARDS -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-
-            <!-- OWNER CARD -->
-            <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slideLeft">
-
-                <!-- IMAGE -->
-                <div class="overflow-hidden relative">
-
-                    <!-- OWNER IMAGE -->
-<img src="images/santosh.jpeg"
-    alt="Santosh Yadav"
-    class="w-full h-[320px] sm:h-[420px] lg:h-[500px] object-top object-cover group-hover:scale-105 transition duration-700">
-
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
-                </div>
-
-                <!-- CONTENT -->
-                <div class="p-6 sm:p-8 text-center">
-
-                    <h3 class="text-2xl sm:text-3xl font-bold text-premium-dark">
-                        Santosh Yadav
-                    </h3>
-
-                    <p class="text-premium-gold font-semibold mt-2 text-base sm:text-lg tracking-wide">
-                        Owner
-                    </p>
-
-                    <div class="w-16 h-[2px] bg-premium-gold mx-auto mt-4"></div>
-
-                    <p class="text-gray-500 mt-5 leading-relaxed text-sm sm:text-base">
-                        Leading NIRVANA Realty with a strong vision for premium commercial development,
-                        modern infrastructure, and long-term investment growth opportunities.
-                    </p>
-
-                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
             </div>
 
-            <!-- BUSINESS PARTNER CARD -->
-            <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slideRight">
+            <!-- CONTENT -->
+            <div class="p-6 sm:p-7 text-center">
 
-                <!-- IMAGE -->
-                <div class="overflow-hidden relative">
+                <h3 class="text-2xl sm:text-3xl font-bold text-premium-dark">
+                    Santosh Yadav
+                </h3>
 
-                    <!-- PARTNER IMAGE -->
-<img src="images/satish.jpeg"
-    alt="Satish Yadav"
-    class="w-full h-[320px] sm:h-[420px] lg:h-[500px] object-top object-cover group-hover:scale-105 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <p class="text-premium-gold font-semibold mt-2 text-base sm:text-lg tracking-wide">
+                    Owner
+                </p>
 
-                </div>
+                <div class="w-16 h-[2px] bg-premium-gold mx-auto mt-4"></div>
 
-                <!-- CONTENT -->
-                <div class="p-6 sm:p-8 text-center">
+                <p class="text-gray-500 mt-5 leading-relaxed text-sm sm:text-base">
+                    Leading NIRVANA Realty with a strong vision for premium commercial development,
+                    modern infrastructure, and long-term investment growth opportunities.
+                </p>
 
-                    <h3 class="text-2xl sm:text-3xl font-bold text-premium-dark">
-                        Satish Yadav
-                    </h3>
+            </div>
 
-                    <p class="text-premium-gold font-semibold mt-2 text-base sm:text-lg tracking-wide">
-                        Business Partner
-                    </p>
+        </div>
 
-                    <div class="w-16 h-[2px] bg-premium-gold mx-auto mt-4"></div>
+        <!-- PARTNER CARD -->
+        <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-slideRight">
 
-                    <p class="text-gray-500 mt-5 leading-relaxed text-sm sm:text-base">
-                        Focused on strategic growth, client relationships, and delivering trusted
-                        real estate solutions with professionalism and commitment.
-                    </p>
+            <div class="overflow-hidden relative">
 
-                </div>
+                <img src="images/satish.jpeg"
+                    alt="Satish Yadav"
+                    class="w-full h-[300px] sm:h-[380px] lg:h-[420px] object-top object-cover group-hover:scale-105 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+            </div>
+
+            <div class="p-6 sm:p-7 text-center">
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-premium-dark">
+                    Satish Yadav
+                </h3>
+
+                <p class="text-premium-gold font-semibold mt-2 text-base sm:text-lg tracking-wide">
+                    Business Partner
+                </p>
+
+                <div class="w-16 h-[2px] bg-premium-gold mx-auto mt-4"></div>
+
+                <p class="text-gray-500 mt-5 leading-relaxed text-sm sm:text-base">
+                    Focused on strategic growth, client relationships, and delivering trusted
+                    real estate solutions with professionalism and commitment.
+                </p>
 
             </div>
 
@@ -431,7 +407,45 @@
 
     </div>
 
-</section>
+    <!-- CENTER CARD -->
+    <div class="flex justify-center">
+
+        <div class="group bg-white rounded-[30px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 w-full sm:w-[85%] md:w-[65%] lg:w-[38%] animate-fadeUp">
+
+            <div class="overflow-hidden relative">
+
+                <img src="images/ram.jpg"
+                    alt="Ram Bhai"
+                    class="w-full h-[300px] sm:h-[380px] lg:h-[420px] object-top object-cover group-hover:scale-105 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+            </div>
+
+            <div class="p-6 sm:p-7 text-center">
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-premium-dark">
+                    Ram Bhai
+                </h3>
+
+                <p class="text-premium-gold font-semibold mt-2 text-base sm:text-lg tracking-wide">
+                    Business Partner
+                </p>
+
+                <div class="w-16 h-[2px] bg-premium-gold mx-auto mt-4"></div>
+
+                <p class="text-gray-500 mt-5 leading-relaxed text-sm sm:text-base">
+                    Dedicated to expanding business operations, strengthening partnerships,
+                    and delivering reliable real estate opportunities with trust and excellence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 
