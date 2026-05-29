@@ -3,33 +3,50 @@
 
 <head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | PS Global Exports</title>
+    <title>Contact | NIRVANA Realty</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'premium-gold': '#C5A059',
+                        'premium-dark': '#0A1A2F',
+                    }
+                }
+            }
+        }
+    </script>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
         * {
-            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        body,html{
+body,html{
+    overflow-x: hidden;
+    
+}
+            
+        body {
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
 
@@ -37,364 +54,192 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            background: #081120;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        .heading-font {
-            font-family: 'Playfair Display', serif;
-        }
-
         .gold-text {
-            color: #D4AF37;
+            background: linear-gradient(135deg, #E6C27A 0%, #B38F40 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .btn-gold {
+            background: linear-gradient(135deg, #C5A059 0%, #A27D3E 100%);
+            transition: 0.3s ease;
         }
 
-        .hero-overlay {
-            background:
-                linear-gradient(to right,
-                    rgba(8, 17, 32, 0.96),
-                    rgba(8, 17, 32, 0.55));
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.35);
         }
 
-        .hero-circle {
-            position: absolute;
-            border-radius: 9999px;
-            filter: blur(100px);
-            opacity: 0.18;
-        }
-
-        input,
-        textarea {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .input-style {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
             outline: none;
-            transition: 0.3s;
+            transition: 0.3s ease;
+            background: white;
         }
 
-        input:focus,
-        textarea:focus {
-            border-color: #D4AF37;
+        .input-style:focus {
+            border-color: #C5A059;
+            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.12);
         }
 
         .contact-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
         }
 
-        .contact-card {
-            transition: 0.4s;
-        }
-
-        @media(max-width:768px) {
-
-            .hero-heading {
-                font-size: 3rem;
-                line-height: 1.1;
-            }
-
+        .mobile-menu-show {
+            display: flex !important;
         }
     </style>
 
 </head>
 
-<body>
+<body class="bg-white text-gray-800">
 
-
-    <!-- ================= BACKGROUND BLUR ================= -->
-
-    <div class="hero-circle bg-yellow-400 w-72 h-72 top-0 left-0"></div>
-    <div class="hero-circle bg-blue-500 w-72 h-72 bottom-0 right-0"></div>
-
-
-
-    <!-- ================= NAVBAR ================= -->
-
-   <div class="nav"></div>
-
-
+<div class="nav"></div>
 
     <!-- ================= HERO ================= -->
 
-    <section class="relative h-[75vh] flex items-center overflow-hidden">
+    <section
+        class="relative min-h-[70vh] flex items-center justify-center bg-[url('./images/room.jpeg')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-black/65"></div>
 
-        <!-- Background -->
-        <img src="./images/backgroundimage.jpg"
-            class="absolute inset-0 w-full h-full object-cover" />
+        <div
+            class="relative z-10 text-center px-5 max-w-4xl mx-auto pt-24">
 
-        <div class="absolute inset-0 hero-overlay"></div>
+            <p
+                class="uppercase tracking-[0.3em] text-premium-gold text-sm mb-5">
+                Contact Us
+            </p>
 
+            <h1
+                class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+                Let's Discuss Your <br>
+                <span class="gold-text">Next Investment</span>
+            </h1>
 
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full mt-20 pt-20">
-
-            <div class="max-w-4xl" data-aos="fade-right">
-
-                <p class="uppercase tracking-[0.4em] text-sm gold-text mb-5">
-
-                    Get In Touch
-
-                </p>
-
-                <h1
-                    class="hero-heading heading-font text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-
-                    Let’s Start
-                    Global Business Together
-
-                </h1>
-
-                <p class="text-gray-300 text-lg leading-8 mt-8 max-w-2xl">
-
-                    Connect with PS Global Exports for premium export products,
-                    international partnerships and trusted worldwide delivery solutions.
-
-                </p>
-
-            </div>
+            <p
+                class="text-white/80 mt-6 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                Get expert guidance for premium commercial properties and
+                investment opportunities in Mumbai’s fastest-growing locations.
+            </p>
 
         </div>
 
     </section>
 
+    <!-- ================= CONTACT SECTION ================= -->
 
+    <section class="py-20 md:py-28 bg-gray-50">
 
-    <!-- ================= CONTACT INFO ================= -->
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
-    <section class="py-24">
+            <div class="grid lg:grid-cols-2 gap-14 items-start">
 
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <!-- LEFT -->
+                <div>
 
-        <!-- HEADING -->
-        <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                    <p
+                        class="uppercase tracking-[0.3em] text-premium-gold text-sm mb-5">
+                        Get In Touch
+                    </p>
 
-            <p class="uppercase tracking-[0.4em] text-sm gold-text">
-                Contact Details
-            </p>
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-premium-dark leading-tight">
+                        We’re Here To Help You
+                    </h2>
 
-            <h2 class="heading-font text-4xl sm:text-5xl font-bold mt-5">
-                Get In Touch With Us
-            </h2>
+                    <p
+                        class="text-gray-500 text-lg leading-relaxed mt-6">
+                        Whether you're looking for a premium commercial space,
+                        retail investment, or expert property consultation —
+                        our team is ready to guide you.
+                    </p>
 
-            <p class="text-gray-400 mt-6 leading-8">
-                Connect with PS Global Exports for premium export solutions,
-                worldwide shipping and trusted business partnerships.
-            </p>
+                    <!-- CONTACT CARDS -->
+                    <div class="space-y-6 mt-10">
 
+                        <div
+                            class="contact-card bg-white p-6 rounded-3xl shadow-md transition duration-300">
+
+                            <div class="flex items-start gap-5">
+
+    <div
+        class="w-14 h-14 rounded-2xl bg-premium-dark flex items-center justify-center text-white text-xl">
+        <i class="fas fa-phone"></i>
+    </div>
+
+    <div>
+        <h3
+            class="text-xl font-semibold text-premium-dark">
+            Phone
+        </h3>
+
+        <p class="text-gray-500 mt-2">
+            <a href="tel:+918286834867" class="hover:text-premium-dark transition">
+                +91 82868 34867
+            </a>
+        </p>
+    </div>
+
+</div>
+
+</div>
+
+<div
+    class="contact-card bg-white p-6 rounded-3xl shadow-md transition duration-300">
+
+    <div class="flex items-start gap-5">
+
+        <div
+            class="w-14 h-14 rounded-2xl bg-premium-dark flex items-center justify-center text-white text-xl">
+            <i class="fas fa-envelope"></i>
         </div>
 
+        <div>
+            <h3
+                class="text-xl font-semibold text-premium-dark">
+                Email
+            </h3>
 
-        <!-- CONTACT GRID -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-
-            <!-- ADDRESS -->
-            <a href="https://maps.google.com/?q=Sunteck+Maxxworld+Naigaon+Mumbai"
-                target="_blank"
-                class="contact-card glass rounded-[35px] p-10 text-center hover:-translate-y-3 transition duration-500 border border-white/5 hover:border-[#D4AF37]/30"
-                data-aos="fade-up">
-
-                <div
-                    class="w-20 h-20 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mx-auto border border-[#D4AF37]/20">
-
-                    <i class="ri-map-pin-line text-4xl gold-text"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-semibold mt-8">
-                    Address
-                </h3>
-
-                <p class="text-gray-300 mt-5 leading-8 text-sm">
-
-                    Sunteck Maxxworld <br>
-                    Naigaon (E), Mumbai <br>
-                    Maharashtra, India
-
-                </p>
-
-            </a>
-
-
-
-            <!-- PHONE -->
-            <a href="tel:+918554817294"
-                class="contact-card glass rounded-[35px] p-10 text-center hover:-translate-y-3 transition duration-500 border border-white/5 hover:border-[#D4AF37]/30"
-                data-aos="fade-up"
-                data-aos-delay="150">
-
-                <div
-                    class="w-20 h-20 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mx-auto border border-[#D4AF37]/20">
-
-                    <i class="ri-phone-line text-4xl gold-text"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-semibold mt-8">
-                    Phone
-                </h3>
-
-                <p class="text-gray-300 mt-5 leading-8">
-
-                    +91 85548 17294
-
-                </p>
-
-            </a>
-
-
-
-            <!-- EMAIL -->
-            <a href="mailto:contact@psglobalexports.co.in"
-                class="contact-card glass rounded-[35px] p-10 text-center hover:-translate-y-3 transition duration-500 border border-white/5 hover:border-[#D4AF37]/30"
-                data-aos="fade-up"
-                data-aos-delay="300">
-
-                <div
-                    class="w-20 h-20 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mx-auto border border-[#D4AF37]/20">
-
-                    <i class="ri-mail-line text-4xl gold-text"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-semibold mt-8">
-                    Email
-                </h3>
-
-                <p class="text-gray-300 mt-5 leading-8 break-all text-sm">
-
-                    contact@psglobalexports.co.in
-
-                </p>
-
-            </a>
-
-
-
-            <!-- WORKING HOURS -->
-            <div
-                class="contact-card glass rounded-[35px] p-10 text-center hover:-translate-y-3 transition duration-500 border border-white/5 hover:border-[#D4AF37]/30"
-                data-aos="fade-up"
-                data-aos-delay="450">
-
-                <div
-                    class="w-20 h-20 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mx-auto border border-[#D4AF37]/20">
-
-                    <i class="ri-time-line text-4xl gold-text"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-semibold mt-8">
-                    Working Hours
-                </h3>
-
-                <p class="text-gray-300 mt-5 leading-8">
-
-                    Mon - Sat <br>
-                    9:00 AM - 7:00 PM
-
-                </p>
-
-            </div>
-
+            <p class="text-gray-500 mt-2 break-all">
+                <a href="mailto:contact@nirvanaproperties.in" class="hover:text-premium-dark transition">
+                    contact@nirvanaproperties.in
+                </a>
+            </p>
         </div>
 
     </div>
 
-</section>
+</div>
 
+                        <div
+                            class="contact-card bg-white p-6 rounded-3xl shadow-md transition duration-300">
 
-    <!-- ================= CONTACT FORM ================= -->
+                            <div class="flex items-start gap-5">
 
-    <section class="pb-24 lg:pb-32" id="contact-form">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-premium-dark flex items-center justify-center text-white text-xl">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
 
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                                <div>
+                                    <h3
+                                        class="text-xl font-semibold text-premium-dark">
+                                        Address
+                                    </h3>
 
-            <div class="grid lg:grid-cols-2 gap-14 items-center">
-
-
-                <!-- LEFT -->
-
-                <div data-aos="fade-right">
-
-                    <p class="uppercase tracking-[0.4em] text-sm gold-text mb-5">
-
-                        Contact Form
-
-                    </p>
-
-                    <h2
-                        class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-
-                        Send Us Your Inquiry
-
-                    </h2>
-
-                    <p class="text-gray-300 text-lg leading-8 mt-8">
-
-                        Fill out the form and our export team will contact you
-                        shortly regarding your business inquiry.
-
-                    </p>
-
-
-                    <!-- Features -->
-
-                    <div class="space-y-6 mt-10">
-
-
-                        <div class="flex items-center gap-4">
-
-                            <div
-                                class="w-14 h-14 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
-
-                                <i class="ri-check-line text-2xl gold-text"></i>
+                                    <p class="text-gray-500 mt-2">
+                                        Gala no.1, Jai Vijay Nagdi Apt.,
+                                        Opposite Seven Square School,
+                                        Naigaon East, Mumbai
+                                    </p>
+                                </div>
 
                             </div>
-
-                            <p class="text-lg text-gray-300">
-                                Premium Export Solutions
-                            </p>
-
-                        </div>
-
-
-
-                        <div class="flex items-center gap-4">
-
-                            <div
-                                class="w-14 h-14 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
-
-                                <i class="ri-check-line text-2xl gold-text"></i>
-
-                            </div>
-
-                            <p class="text-lg text-gray-300">
-                                Trusted Worldwide Delivery
-                            </p>
-
-                        </div>
-
-
-
-                        <div class="flex items-center gap-4">
-
-                            <div
-                                class="w-14 h-14 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
-
-                                <i class="ri-check-line text-2xl gold-text"></i>
-
-                            </div>
-
-                            <p class="text-lg text-gray-300">
-                                Long-Term Business Partnership
-                            </p>
 
                         </div>
 
@@ -402,102 +247,96 @@
 
                 </div>
 
-
-
                 <!-- RIGHT FORM -->
+                <div id="contact-form"
+    class="bg-white rounded-[35px] shadow-2xl p-6 sm:p-8 md:p-10">
 
-                <div
-                    class="glass rounded-[40px] p-8 sm:p-10 lg:p-12"
-                    data-aos="fade-left">
+    <h3 class="text-3xl font-bold text-premium-dark">
+        Request A Callback
+    </h3>
 
-                    <form class="space-y-6">
+    <p class="text-gray-500 mt-3">
+        Fill the form and our team will contact you shortly.
+    </p>
 
-                        <!-- Name -->
-                        <div>
+    <!-- THANK YOU MESSAGE -->
+    <div id="success-message"
+        class="hidden mt-6 bg-green-100 border border-green-300 text-green-700 px-5 py-4 rounded-2xl text-center font-medium">
+        Thank you! Your inquiry has been submitted successfully.
+    </div>
 
-                            <label class="block text-gray-300 mb-3">
-                                Full Name
-                            </label>
+    <form id="inquiryForm" class="space-y-6 mt-8">
 
-                            <input type="text"
-                                placeholder="Enter your name"
-                                class="w-full px-5 py-4 rounded-2xl text-white" />
+        <!-- NAME -->
+        <div>
+            <input type="text"
+                placeholder="Full Name *"
+                class="input-style"
+                required>
+        </div>
 
-                        </div>
+        <!-- EMAIL -->
+        <div>
+            <input type="email"
+                placeholder="Email Address *"
+                class="input-style"
+                required>
+        </div>
+
+        <!-- PHONE -->
+        <div>
+            <input type="tel"
+                placeholder="Phone Number *"
+                class="input-style"
+                required>
+        </div>
+
+        <!-- SELECT -->
+        <div>
+            <select class="input-style" required>
+
+                <option value="">
+                    Select Interest *
+                </option>
+
+                <option>
+                    Commercial Space
+                </option>
+
+                <option>
+                    Office Space
+                </option>
+
+                <option>
+                    Retail Investment
+                </option>
+
+                <option>
+                    Property Consultation
+                </option>
+
+            </select>
+        </div>
+
+        <!-- MESSAGE -->
+        <div>
+            <textarea rows="5"
+                placeholder="Your Message *"
+                class="input-style resize-none"
+                required></textarea>
+        </div>
+
+        <!-- BUTTON -->
+        <button type="submit"
+            class="btn-gold w-full text-white py-4 rounded-2xl font-semibold text-lg hover:scale-[1.02] transition duration-300">
+            Send Inquiry
+        </button>
+
+    </form>
+
+</div>
 
 
-
-                        <!-- Email -->
-                        <div>
-
-                            <label class="block text-gray-300 mb-3">
-                                Email Address
-                            </label>
-
-                            <input type="email"
-                                placeholder="Enter your email"
-                                class="w-full px-5 py-4 rounded-2xl text-white" />
-
-                        </div>
-
-
-
-                        <!-- Phone -->
-                        <div>
-
-                            <label class="block text-gray-300 mb-3">
-                                Phone Number
-                            </label>
-
-                            <input type="tel"
-                                placeholder="Enter phone number"
-                                class="w-full px-5 py-4 rounded-2xl text-white" />
-
-                        </div>
-
-
-
-                        <!-- Product -->
-                        <div>
-
-                            <label class="block text-gray-300 mb-3">
-                                Product Requirement
-                            </label>
-
-                            <input type="text"
-                                placeholder="Enter product category"
-                                class="w-full px-5 py-4 rounded-2xl text-white" />
-
-                        </div>
-
-
-
-                        <!-- Message -->
-                        <div>
-
-                            <label class="block text-gray-300 mb-3">
-                                Message
-                            </label>
-
-                            <textarea rows="5"
-                                placeholder="Write your message..."
-                                class="w-full px-5 py-4 rounded-2xl text-white resize-none"></textarea>
-
-                        </div>
-
-
-
-                        <!-- Button -->
-                        <button
-                            class="w-full bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold py-4 rounded-2xl transition duration-300 hover:scale-[1.02]">
-
-                            Send Inquiry
-
-                        </button>
-
-                    </form>
-
-                </div>
 
             </div>
 
@@ -505,57 +344,62 @@
 
     </section>
 
+    <!-- ================= MAP ================= -->
 
+    <section class="pb-20 bg-gray-50">
 
-    <!-- ================= MAP SECTION ================= -->
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
-   <section class="pb-24 lg:pb-32">
+            <div
+                class="overflow-hidden rounded-[35px] shadow-2xl h-[350px] md:h-[500px]">
 
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <iframe
+                    src="https://maps.google.com/maps?q=naigaon%20east&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
 
-        <div
-            class="rounded-[40px] overflow-hidden h-[350px] sm:h-[450px] lg:h-[550px] shadow-2xl border border-white/10"
-            data-aos="zoom-in">
-
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.0609639302907!2d72.85543327521269!3d19.366512781898827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7af6dee46ff6b%3A0x6dfbf2411e42acd!2sSunteck%20MAXXWorld%20Naigaon!5e0!3m2!1sen!2sin!4v1779127689005!5m2!1sen!2sin"
-                
-                class="w-full h-full"
-
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-
-            </iframe>
+            </div>
 
         </div>
 
-    </div>
-
-</section>
-
-
+    </section>
 
     <!-- ================= FOOTER ================= -->
 
     <div class="footer"></div>
-    <script src="nav.js"></script>
-    <script src="footer.js"></script>
+    <script src="./nav.js"></script>
+    <script src="./footer.js"></script>
+    <!-- FORM SCRIPT -->
+<script>
+
+    const form = document.getElementById("inquiryForm");
+    const successMessage = document.getElementById("success-message");
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        // SHOW THANK YOU MESSAGE
+        successMessage.classList.remove("hidden");
+
+        // CLEAR FORM
+        form.reset();
+
+        // AUTO HIDE MESSAGE
+        setTimeout(() => {
+
+            successMessage.classList.add("hidden");
+
+        }, 4000);
+
+    });
 
 
-
-    <!-- ================= AOS ================= -->
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <script>
-
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
-
+       
     </script>
 
 </body>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Properties | NIRVANA Realty</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'premium-gold': '#C5A059',
+                        'premium-dark': '#0A1A2F',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        body,html{
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <div class="nav"></div>
+    <!-- ================= HERO ================= -->
+
+    <section
+        class="relative h-[60vh] bg-[url('./images/building2.jpeg')] bg-cover bg-center">
+
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <div
+            class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+
+            <p
+                class="text-premium-gold uppercase tracking-[0.3em] text-sm mb-4">
+                Premium Listings
+            </p>
+
+            <h1
+                class="text-5xl md:text-6xl font-bold text-white leading-tight">
+                Featured Properties
+            </h1>
+
+            <p
+                class="text-white/80 mt-5 max-w-2xl text-lg">
+                Explore luxury commercial spaces crafted for modern businesses
+                and high-return investments.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PROPERTY GRID ================= -->
+
+    <section class="py-20">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <!-- HEADING -->
+            <div class="text-center mb-14">
+
+                <h2
+                    class="text-4xl md:text-5xl font-bold text-premium-dark">
+                    Prime Commercial Spaces
+                </h2>
+
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+                    Handpicked premium retail and office spaces in Naigaon East.
+                </p>
+
+            </div>
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CARD 1 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+                    <div class="overflow-hidden">
+
+                        <img src="/images/building2.jpeg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div
+                            class="flex items-center justify-between mb-4">
+
+                            <span
+                                class="bg-premium-gold/10 text-premium-gold text-xs px-3 py-1 rounded-full">
+                                Commercial
+                            </span>
+
+                            <span class="text-gray-400 text-sm">
+                                625 sq.ft
+                            </span>
+
+                        </div>
+
+                        <h3
+                            class="text-2xl font-semibold text-premium-dark">
+                            Gala No.1
+                        </h3>
+
+                        <p class="text-gray-500 mt-3 leading-relaxed">
+                            Prime road-facing commercial gala opposite Seven
+                            Square School.
+                        </p>
+
+                        <div
+                            class="flex items-center justify-between mt-6">
+
+                            <div>
+
+                                <p
+                                    class="text-gray-400 text-sm">
+                                    Starting From
+                                </p>
+
+                                <h4
+                                    class="text-xl font-bold text-premium-dark">
+                                    On Request
+                                </h4>
+
+                            </div>
+
+                            <a href="contact.html"
+                                class="bg-premium-dark text-white px-5 py-2 rounded-full hover:bg-premium-gold hover:text-black transition">
+                                Enquire
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+                    <div class="overflow-hidden">
+
+                        <img src="/images/card2.jpg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div
+                            class="flex items-center justify-between mb-4">
+
+                            <span
+                                class="bg-premium-gold/10 text-premium-gold text-xs px-3 py-1 rounded-full">
+                                Retail Space
+                            </span>
+
+                            <span class="text-gray-400 text-sm">
+                                540 sq.ft
+                            </span>
+
+                        </div>
+
+                        <h3
+                            class="text-2xl font-semibold text-premium-dark">
+                            Premium Shop Space
+                        </h3>
+
+                        <p class="text-gray-500 mt-3 leading-relaxed">
+                            Modern commercial unit with strong visibility and
+                            high footfall.
+                        </p>
+
+                        <div
+                            class="flex items-center justify-between mt-6">
+
+                            <div>
+
+                                <p
+                                    class="text-gray-400 text-sm">
+                                    Starting From
+                                </p>
+
+                                <h4
+                                    class="text-xl font-bold text-premium-dark">
+                                    On Request
+                                </h4>
+
+                            </div>
+
+                            <a href="contact.html"
+                                class="bg-premium-dark text-white px-5 py-2 rounded-full hover:bg-premium-gold hover:text-black transition">
+                                Enquire
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 3 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+                    <div class="overflow-hidden">
+
+                        <img src="/images/building3.jpeg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div
+                            class="flex items-center justify-between mb-4">
+
+                            <span
+                                class="bg-premium-gold/10 text-premium-gold text-xs px-3 py-1 rounded-full">
+                                Office
+                            </span>
+
+                            <span class="text-gray-400 text-sm">
+                                710 sq.ft
+                            </span>
+
+                        </div>
+
+                        <h3
+                            class="text-2xl font-semibold text-premium-dark">
+                            Luxury Office Unit
+                        </h3>
+
+                        <p class="text-gray-500 mt-3 leading-relaxed">
+                            Elegant office setup designed for premium businesses.
+                        </p>
+
+                        <div
+                            class="flex items-center justify-between mt-6">
+
+                            <div>
+
+                                <p
+                                    class="text-gray-400 text-sm">
+                                    Starting From
+                                </p>
+
+                                <h4
+                                    class="text-xl font-bold text-premium-dark">
+                                    On Request
+                                </h4>
+
+                            </div>
+
+                            <a href="contact.html"
+                                class="bg-premium-dark text-white px-5 py-2 rounded-full hover:bg-premium-gold hover:text-black transition">
+                                Enquire
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 4 - Season's 1BHK -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+                    <div class="overflow-hidden">
+
+                        <img src="/images/building2.jpeg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div
+                            class="flex items-center justify-between mb-4">
+
+                            <span
+                                class="bg-premium-gold/10 text-premium-gold text-xs px-3 py-1 rounded-full">
+                                Residential
+                            </span>
+
+                            <span class="text-gray-400 text-sm">
+                                433 sq.ft
+                            </span>
+
+                        </div>
+
+                        <h3
+                            class="text-2xl font-semibold text-premium-dark">
+                            Season's Alpinepeak 1BHK
+                        </h3>
+
+                        <p class="text-gray-500 mt-3 leading-relaxed">
+                            Modern 1BHK home at Naigaon East with luxury washroom design, verified tiles, and Jaguar taps. 60+ modern amenities included.
+                        </p>
+
+                        <div
+                            class="flex items-center justify-between mt-6">
+
+                            <div>
+
+                                <p
+                                    class="text-gray-400 text-sm">
+                                    Spot Offers Available
+                                </p>
+
+                                <h4
+                                    class="text-xl font-bold text-premium-dark">
+                                    Get Flat Discount
+                                </h4>
+
+                            </div>
+
+                            <a href="contact.html"
+                                class="bg-premium-dark text-white px-5 py-2 rounded-full hover:bg-premium-gold hover:text-black transition">
+                                Enquire
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 5 - Season's 2BHK -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+                    <div class="overflow-hidden">
+
+                        <img src="/images/building3.jpeg"
+                            class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div
+                            class="flex items-center justify-between mb-4">
+
+                            <span
+                                class="bg-premium-gold/10 text-premium-gold text-xs px-3 py-1 rounded-full">
+                                Residential
+                            </span>
+
+                            <span class="text-gray-400 text-sm">
+                                652 sq.ft
+                            </span>
+
+                        </div>
+
+                        <h3
+                            class="text-2xl font-semibold text-premium-dark">
+                            Season's Alpinepeak 2BHK
+                        </h3>
+
+                        <p class="text-gray-500 mt-3 leading-relaxed">
+                            Spacious 2BHK home at Naigaon East with luxury washroom design, verified tiles, and Jaguar taps. 60+ modern amenities included.
+                        </p>
+
+                        <div
+                            class="flex items-center justify-between mt-6">
+
+                            <div>
+
+                                <p
+                                    class="text-gray-400 text-sm">
+                                    Spot Offers Available
+                                </p>
+
+                                <h4
+                                    class="text-xl font-bold text-premium-dark">
+                                    Get Flat Discount
+                                </h4>
+
+                            </div>
+
+                            <a href="contact.html"
+                                class="bg-premium-dark text-white px-5 py-2 rounded-full hover:bg-premium-gold hover:text-black transition">
+                                Enquire
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="footer"></div>
+    <script src="./footer.js"></script>
+    <script src="./nav.js"></script>
+
+</body>
+
+</html>

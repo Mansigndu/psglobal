@@ -3,496 +3,334 @@
 
 <head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Gallery | PS Global Exports</title>
+    <title>Gallery | NIRVANA Realty</title>
 
-    <!-- Tailwind -->
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- TAILWIND CONFIG -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'premium-gold': '#C5A059',
+                        'premium-dark': '#0A1A2F',
+                    }
+                }
+            }
+        }
+    </script>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- GOOGLE FONT -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <!-- Remix Icon -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-
-
     <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-        body,html{
-            overflow-x: hidden;
-        }
-
-        html {
-            scroll-behavior: smooth;
+body,html{
+    overflow-x: hidden;
+}
+        body{
+            font-family:'Inter',sans-serif;
         }
 
-        body {
-            background: #081120;
-            color: white;
-            overflow-x: hidden;
+        html{
+            scroll-behavior:smooth;
         }
 
-        .heading-font {
-            font-family: 'Playfair Display', serif;
+        .gallery-card{
+            transition:0.4s;
         }
 
-        .gold-text {
-            color: #D4AF37;
+        .gallery-card:hover{
+            transform:translateY(-8px);
         }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .gallery-card img{
+            transition:0.5s;
         }
 
-        .hero-overlay {
-            background:
-                linear-gradient(to right,
-                    rgba(8, 17, 32, 0.96),
-                    rgba(8, 17, 32, 0.55));
+        .gallery-card:hover img{
+            transform:scale(1.06);
         }
 
-        .hero-circle {
-            position: absolute;
-            border-radius: 9999px;
-            filter: blur(100px);
-            opacity: 0.18;
+        .mobile-link{
+            display:flex;
+            align-items:center;
+            gap:14px;
+            padding:16px 18px;
+            border-radius:18px;
+            color:#374151;
+            font-weight:500;
+            font-size:17px;
+            transition:0.3s;
         }
 
-        .gallery-card img {
-            transition: 0.8s;
+        .mobile-link:hover{
+            background:#0A1A2F;
+            color:white;
         }
 
-        .gallery-card:hover img {
-            transform: scale(1.08);
-        }
+        @media(max-width:480px){
 
-        .gallery-card:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay {
-            opacity: 0;
-            transition: 0.5s;
-        }
-
-        .floating {
-            animation: float 5s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0% {
-                transform: translateY(0px);
+            #mobile-menu{
+                width:88%;
             }
 
-            50% {
-                transform: translateY(-12px);
-            }
-
-            100% {
-                transform: translateY(0px);
+            .mobile-link{
+                padding:15px 16px;
+                font-size:16px;
             }
 
         }
 
-        @media(max-width:768px) {
-
-            .hero-heading {
-                font-size: 3rem;
-                line-height: 1.1;
-            }
-
-        }
     </style>
 
 </head>
 
-<body>
-
-
-    <!-- ================= BACKGROUND BLUR ================= -->
-
-    <div class="hero-circle bg-yellow-400 w-72 h-72 top-0 left-0"></div>
-    <div class="hero-circle bg-blue-500 w-72 h-72 bottom-0 right-0"></div>
-
+<body class="bg-white text-gray-800 overflow-x-hidden">
 
 <div class="nav"></div>
 
+<!-- ================= HERO ================= -->
 
-    <!-- ================= HERO SECTION ================= -->
+<section
+    class="relative h-[65vh] md:h-[75vh] flex items-center justify-center text-center overflow-hidden">
 
-    <section class="relative h-[75vh] flex items-center overflow-hidden">
+    <!-- BG -->
+    <img src="images/building.jpeg"
+        class="absolute inset-0 w-full h-full object-cover">
 
-        <!-- Background -->
-        <img src="./images/backgroundimage.jpg"
-            class="absolute inset-0 w-full h-full object-cover" />
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-black/65"></div>
 
-        <div class="absolute inset-0 hero-overlay"></div>
+    <!-- CONTENT -->
+    <div class="relative z-10 px-6">
 
+        <p
+            class="uppercase tracking-[0.35em] text-premium-gold text-xs md:text-sm mb-5">
+            Luxury Gallery
+        </p>
 
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-20">
+        <h1
+            class="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
+            Explore Premium <br>
+            Commercial Spaces
+        </h1>
 
-            <div class="max-w-4xl" data-aos="fade-right">
+        <p
+            class="text-white/80 mt-6 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            Discover elegant commercial properties crafted for
+            premium business experiences and long-term investment value.
+        </p>
 
-                <p class="uppercase tracking-[0.4em] mt-20 text-sm gold-text mb-5">
+    </div>
 
-                    Our Gallery
+</section>
 
-                </p>
+<!-- ================= GALLERY ================= -->
 
-                <h1
-                    class="hero-heading heading-font text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+<section class="py-20 md:py-28 bg-white">
 
-                    Showcasing Our
-                    Premium Export Collections
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
-                </h1>
+        <!-- HEADING -->
+        <div class="text-center mb-14">
 
-                <p class="text-gray-300 text-lg leading-8 mt-8 max-w-2xl">
+            <p
+                class="uppercase tracking-[0.3em] text-premium-gold text-sm mb-4">
+                Property Showcase
+            </p>
 
-                    Explore our curated gallery of premium textiles,
-                    herbal products, gemstones, cosmetics,
-                    fashion apparel and handcrafted lifestyle collections.
+            <h2
+                class="text-3xl md:text-5xl font-bold text-premium-dark">
+                Our Premium Gallery
+            </h2>
 
-                </p>
-
-            </div>
+            <p
+                class="text-gray-500 mt-5 max-w-2xl mx-auto leading-relaxed">
+                A curated showcase of luxurious commercial spaces,
+                modern architecture, and investment-ready environments.
+            </p>
 
         </div>
 
-    </section>
-
-
-
-    <!-- ================= GALLERY GRID ================= -->
-
-    <section class="py-24 lg:py-32">
-
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
-            <!-- Heading -->
-            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-
-                <p class="uppercase tracking-[0.4em] text-sm gold-text">
-
-                    Premium Showcase
-
-                </p>
-
-                <h2
-                    class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold mt-5">
-
-                    Our Product Gallery
-
-                </h2>
-
-            </div>
-
-
-
-            <!-- Masonry Style Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
-
-
-                <!-- CARD -->
-
-                <div
-                    class="gallery-card relative overflow-hidden rounded-[35px] lg:row-span-2 h-[550px]"
-                    data-aos="zoom-in">
-
-                    <img src="./images/textile.jpg" alt="Textile Products"
-                        class="w-full h-full object-cover" />
-
-                    <div
-                        class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-8">
-
-                        <h3 class="text-3xl font-semibold">
-                            Textile Products
-                        </h3>
-
-                        <p class="text-gray-300 mt-3">
-                            Premium fabrics & towels.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CARD -->
-
-                <div
-                    class="gallery-card relative overflow-hidden rounded-[35px] h-[260px]"
-                    data-aos="zoom-in"
-                    data-aos-delay="100">
-
-                    <img src="./images/product.jpg" alt="Cosmetic Products"
-                        class="w-full h-full object-cover" />
-
-                    <div
-                        class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-
-                        <h3 class="text-2xl font-semibold">
-                            Beauty Products
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CARD -->
-
-                <div
-                    class="gallery-card relative overflow-hidden rounded-[35px] h-[260px]"
-                    data-aos="zoom-in"
-                    data-aos-delay="200">
-
-                    <img src="./images/imag.jpeg" alt="Gemstone Products"
-                        class="w-full h-full object-cover" />
-
-                    <div
-                        class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-
-                        <h3 class="text-2xl font-semibold">
-                            Gemstones
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CARD -->
-
-                <div
-                    class="gallery-card relative overflow-hidden rounded-[35px] lg:row-span-2 h-[550px]"
-                    data-aos="zoom-in"
-                    data-aos-delay="300">
-
-                    <img src="./images/fashion.jpg" alt="Fashion Apparel"
-                        class="w-full h-full object-cover" />
-
-                    <div
-                        class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-8">
-
-                        <h3 class="text-3xl font-semibold">
-                            Fashion Apparel
-                        </h3>
-
-                        <p class="text-gray-300 mt-3">
-                            Luxury export garments.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CARD -->
-
-                <div
-                    class="gallery-card relative overflow-hidden rounded-[35px] h-[260px]"
-                    data-aos="zoom-in"
-                    data-aos-delay="400">
-
-                    <img src="./images/herbal.jpg" alt="Herbal Products"
-                        class="w-full h-full object-cover" />
-
-                    <div
-                        class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-
-                        <h3 class="text-2xl font-semibold">
-                            Herbal Products
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CARD -->
-
-                <div
-                    class="gallery-card relative overflow-hidden rounded-[35px] h-[260px]"
-                    data-aos="zoom-in"
-                    data-aos-delay="500">
-
-                    <img src="./images/handcraft.jpg" alt="Handcrafted Decor"
-                        class="w-full h-full object-cover" />
-
-                    <div
-                        class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-
-                        <h3 class="text-2xl font-semibold">
-                            Handcrafted Decor
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= EXPORT SHOWCASE ================= -->
-
-    <section class="py-24 lg:py-32 bg-[#0c1728] overflow-hidden">
-
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-                <!-- Left -->
-                <div data-aos="fade-right">
-
-                    <p class="uppercase tracking-[0.4em] text-sm gold-text mb-5">
-
-                        Global Presence
-
-                    </p>
-
-                    <h2
-                        class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-
-                        Exporting Quality
-                        Worldwide
-
-                    </h2>
-
-                    <p class="text-gray-300 text-lg leading-8 mt-8">
-
-                        Our products are crafted with excellence and delivered
-                        globally with premium packaging, trusted logistics
-                        and international quality standards.
-
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-6 mt-10">
-
-                        <div class="glass rounded-[30px] p-8 text-center floating">
-
-                            <h3 class="text-5xl font-bold gold-text">
-                                20+
-                            </h3>
-
-                            <p class="text-gray-300 mt-3">
-                                Countries
-                            </p>
-
-                        </div>
-
-                        <div class="glass rounded-[30px] p-8 text-center floating">
-
-                            <h3 class="text-5xl font-bold gold-text">
-                                100+
-                            </h3>
-
-                            <p class="text-gray-300 mt-3">
-                                Products
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Right -->
-                <div
-                    class="relative rounded-[40px] overflow-hidden h-[500px]"
-                    data-aos="fade-left">
-
-                    <img src="./images/bg.jpg"
-                        class="w-full h-full object-cover hover:scale-105 transition duration-700" />
-
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= CTA ================= -->
-
-    <section class="py-24 lg:py-32">
-
-        <div class="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
-
+        <!-- GRID -->
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+            <!-- CARD -->
             <div
-                class="glass rounded-[40px] p-10 sm:p-14 lg:p-16 text-center"
-                data-aos="zoom-in">
+                class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
 
-                <p class="uppercase tracking-[0.4em] text-sm gold-text">
+                <div class="overflow-hidden">
 
-                    Let’s Connect
+                    <img src="images/building.jpeg"
+                        class="w-full h-[260px] object-cover">
 
-                </p>
+                </div>
 
-                <h2
-                    class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold mt-5 leading-tight">
+                <div class="p-6">
 
-                    Looking For Premium
-                    Export Products?
+                    <h3
+                        class="text-2xl font-semibold text-premium-dark">
+                        Premium Exterior
+                    </h3>
 
-                </h2>
+                    <p
+                        class="text-gray-500 mt-3 leading-relaxed">
+                        Elegant commercial frontage with luxurious
+                        architectural appeal.
+                    </p>
 
-                <p
-                    class="text-gray-300 text-lg leading-8 mt-8 max-w-3xl mx-auto">
+                </div>
 
-                    Connect with PS Global Exports for premium quality products,
-                    trusted worldwide delivery and long-term business partnerships.
+            </div>
 
-                </p>
+            <!-- CARD -->
+            <div
+                class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
 
-                <div class="flex flex-wrap justify-center gap-5 mt-10">
+                <div class="overflow-hidden">
 
-                    <a href="contact.html"
-                        class="bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold px-10 py-4 rounded-full transition duration-300 hover:scale-105">
+                    <img src="images/card2.jpg"
+                        class="w-full h-[260px] object-cover">
 
-                        Send Inquiry
+                </div>
 
-                    </a>
+                <div class="p-6">
 
-                    <a href="products.html"
-                        class="border border-white/20 hover:border-[#D4AF37] hover:text-[#D4AF37] px-10 py-4 rounded-full transition duration-300">
+                    <h3
+                        class="text-2xl font-semibold text-premium-dark">
+                        Modern Interiors
+                    </h3>
 
-                        View Products
+                    <p
+                        class="text-gray-500 mt-3 leading-relaxed">
+                        Spacious layouts designed for premium business
+                        environments.
+                    </p>
 
-                    </a>
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div
+                class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+
+                <div class="overflow-hidden">
+
+                    <img src="images/building2.jpeg"
+                        class="w-full h-[260px] object-cover">
+
+                </div>
+
+                <div class="p-6">
+
+                    <h3
+                        class="text-2xl font-semibold text-premium-dark">
+                        Strategic Location
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-3 leading-relaxed">
+                        Prime connectivity with growing infrastructure
+                        and premium surroundings.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div
+                class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+
+                <div class="overflow-hidden">
+
+                    <img src="images/card4.jpg"
+                        class="w-full h-[260px] object-cover">
+
+                </div>
+
+                <div class="p-6">
+
+                    <h3
+                        class="text-2xl font-semibold text-premium-dark">
+                        Office Spaces
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-3 leading-relaxed">
+                        Modern office-ready spaces with elegant
+                        premium finishes.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div
+                class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+
+                <div class="overflow-hidden">
+
+                    <img src="images/room.jpeg"
+                        class="w-full h-[260px] object-cover">
+
+                </div>
+
+                <div class="p-6">
+
+                    <h3
+                        class="text-2xl font-semibold text-premium-dark">
+                        Luxury Experience
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-3 leading-relaxed">
+                        Designed to create a luxurious and lasting
+                        business impression.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div
+                class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+
+                <div class="overflow-hidden">
+
+                    <img src="images/building3.jpeg"
+                        class="w-full h-[260px] object-cover">
+
+                </div>
+
+                <div class="p-6">
+
+                    <h3
+                        class="text-2xl font-semibold text-premium-dark">
+                        Investment Potential
+                    </h3>
+
+                    <p
+                        class="text-gray-500 mt-3 leading-relaxed">
+                        High-growth commercial opportunities in premium
+                        Mumbai corridors.
+                    </p>
 
                 </div>
 
@@ -500,30 +338,47 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section
+    class="py-20 bg-premium-dark text-center text-white px-6">
+
+    <p
+        class="uppercase tracking-[0.3em] text-premium-gold text-sm mb-4">
+        Book Your Visit
+    </p>
+
+    <h2
+        class="text-3xl md:text-5xl font-bold leading-tight">
+        Experience Premium <br>
+        Commercial Realty
+    </h2>
+
+    <p
+        class="text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
+        Schedule your private property visit today and discover
+        premium commercial investment opportunities.
+    </p>
+
+    <a href="contact.html"
+        class="inline-block mt-8 bg-premium-gold text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition">
+
+        Schedule Visit
+
+    </a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<div class="footer"></div>
 
 
-
-    <!-- ================= FOOTER ================= -->
-
-   <div class="footer"></div>
-    <script src="nav.js"></script>
-    <script src="footer.js"></script>
-
-
-    <!-- ================= AOS ================= -->
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <script>
-
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
-
-    </script>
+<script src="./nav.js"></script>
+<script src="./footer.js"></script>
 
 </body>
-
 </html>

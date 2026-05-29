@@ -1,94 +1,59 @@
-const navbar = document.querySelector(".nav");
-
-navbar.innerHTML = `
-
+const nav=document.querySelector('.nav')
+nav.innerHTML=` 
 <nav id="navbar"
-class="fixed top-0 left-0 w-full z-50 bg-[#081120]/70 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
 
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div class="flex items-center justify-between py-5">
+        <div class="flex items-center justify-between py-4 lg:py-5">
 
             <!-- LOGO -->
             <a href="index.html"
-class="flex items-center gap-3">
-
-    <img src="./images/logo.jpeg"
-    alt="PS Global Exports Logo"
-    class="w-14 h-14 rounded-full object-cover border border-[#D4AF37] p-[2px]">
-
-    <div class="flex flex-col leading-none">
-
-        <span
-        class="heading-font text-xl sm:text-2xl font-bold tracking-[0.18em] text-white">
-
-            PS <span class="text-[#D4AF37]">GLOBAL</span>
-
-        </span>
-
-        <span
-        class="text-[10px] uppercase tracking-[0.35em] text-gray-300 mt-1">
-
-            EXPORTS
-
-        </span>
-
-    </div>
-
-</a>
-
+                class="text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-white transition duration-300">
+                NIRVANA
+            </a>
 
             <!-- DESKTOP MENU -->
-            <div
-            class="hidden lg:flex items-center gap-10 uppercase tracking-widest text-sm text-white">
+            <div class="hidden md:flex items-center gap-8 lg:gap-10">
 
                 <a href="index.html"
-                class="hover:text-[#D4AF37] transition duration-300">
-                Home
+                    class="text-white/90 hover:text-premium-gold transition duration-300 text-sm lg:text-base">
+                    Home
+                </a>
+
+                <a href="properties.html"
+                    class="text-white/90 hover:text-premium-gold transition duration-300 text-sm lg:text-base">
+                    Properties
                 </a>
 
                 <a href="about.html"
-                class="hover:text-[#D4AF37] transition duration-300">
-                About
-                </a>
-
-                <a href="products.html"
-                class="hover:text-[#D4AF37] transition duration-300">
-                Products
+                    class="text-white/90 hover:text-premium-gold transition duration-300 text-sm lg:text-base">
+                    About
                 </a>
 
                 <a href="gallery.html"
-                class="hover:text-[#D4AF37] transition duration-300">
-                Gallery
-                </a>
-
-                <a href="services.html"
-                class="hover:text-[#D4AF37] transition duration-300">
-                Services
+                    class="text-white/90 hover:text-premium-gold transition duration-300 text-sm lg:text-base">
+                    Gallery
                 </a>
 
                 <a href="contact.html"
-                class="hover:text-[#D4AF37] transition duration-300">
-                Contact
+                    class="text-white/90 hover:text-premium-gold transition duration-300 text-sm lg:text-base">
+                    Contact
                 </a>
 
             </div>
 
-
-            <!-- BUTTON -->
+            <!-- CTA -->
             <a href="contact.html"
-            class="hidden lg:flex bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold px-7 py-3 rounded-full transition duration-300 hover:scale-105">
-
-                Send Inquiry
-
+                class="hidden md:inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 lg:px-6 py-2.5 rounded-full hover:bg-premium-gold hover:text-black transition duration-300 text-sm font-medium">
+                Schedule Visit
             </a>
 
+            <!-- MOBILE BUTTON -->
+            <button id="mobile-menu-btn"
+                class="md:hidden text-white text-2xl transition duration-300">
 
-            <!-- MOBILE MENU BUTTON -->
-            <button id="menu-btn"
-            class="lg:hidden text-white text-3xl">
-
-                ☰
+                <i class="fas fa-bars"></i>
 
             </button>
 
@@ -96,109 +61,63 @@ class="flex items-center gap-3">
 
     </div>
 
+   <div id="mobile-menu"
+  class="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-2xl z-50
+  transform translate-x-full transition-transform duration-300">
 
-    <!-- MOBILE MENU -->
+  <!-- TOP -->
+  <div class="flex justify-between items-center p-5 border-b">
+    <h2 class="text-lg font-bold">Menu</h2>
+    <button id="close-menu" class="text-2xl">✕</button>
+  </div>
 
-    <div id="mobile-menu"
-    class="lg:hidden hidden bg-[#081120] border-t border-white/10">
+  <!-- LINKS -->
+  <div class="flex flex-col gap-6 p-6 text-lg font-medium">
 
-        <div
-        class="flex flex-col px-6 py-6 space-y-5 uppercase tracking-widest text-sm text-white">
+    <a href="index.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
 
-            <a href="index.html" class="mobile-link">
-            Home
-            </a>
+  </div>
 
-            <a href="about.html" class="mobile-link">
-            About
-            </a>
+</div>
 
-            <a href="products.html" class="mobile-link">
-            Products
-            </a>
+    
+    
+`
+document.addEventListener("DOMContentLoaded", () => {
 
-            <a href="gallery.html" class="mobile-link">
-            Gallery
-            </a>
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const close = document.getElementById("close-menu");
 
-            <a href="services.html" class="mobile-link">
-            Services
-            </a>
+    if (!btn || !menu) return;
 
-            <a href="contact.html" class="mobile-link">
-            Contact
-            </a>
+    // OPEN (slide in)
+    btn.addEventListener("click", () => {
+        menu.classList.remove("translate-x-full");
+    });
 
-            <a href="contact.html"
-            class="bg-[#D4AF37] text-center text-black font-semibold py-3 rounded-full">
+    // CLOSE FUNCTION
+    function closeMenu() {
+        menu.classList.add("translate-x-full");
+    }
 
-                Send Inquiry
+    close?.addEventListener("click", closeMenu);
 
-            </a>
+    // CLOSE ON LINK CLICK
+    menu.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", closeMenu);
+    });
 
-        </div>
-
-    </div>
-
-</nav>
-
-`;
-
-
-
-/* ================= MOBILE MENU ================= */
-
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-
-menuBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle("hidden");
-
-});
-
-
-/* ================= CLOSE MENU ON LINK CLICK ================= */
-
-const mobileLinks = document.querySelectorAll(".mobile-link");
-
-mobileLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.classList.add("hidden");
-
+    // 🔥 SCROLL CLOSE
+    window.addEventListener("scroll", () => {
+        if (!menu.classList.contains("translate-x-full")) {
+            closeMenu();
+        }
     });
 
 });
 
-
-/* ================= CLOSE MENU ON SCROLL ================= */
-
-window.addEventListener("scroll", () => {
-
-    mobileMenu.classList.add("hidden");
-
-});
-
-
-
-/* ================= NAVBAR BG ON SCROLL ================= */
-
-window.addEventListener("scroll", () => {
-
-    const navbar = document.getElementById("navbar");
-
-    if(window.scrollY > 50){
-
-        navbar.classList.add("bg-[#081120]");
-
-    }
-
-    else{
-
-        navbar.classList.remove("bg-[#081120]");
-
-    }
-
-});
