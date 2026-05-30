@@ -212,29 +212,35 @@ footer.innerHTML = `
                     </div>
 
 
-
                     <!-- PHONE -->
-                    <div class="flex gap-4">
+<div class="flex gap-4">
 
-                        <div
-                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+    <div
+        class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
 
-                            <i class="ri-phone-line text-[#D4AF37] text-xl"></i>
+        <i class="ri-phone-line text-[#D4AF37] text-xl"></i>
 
-                        </div>
+    </div>
 
-                        <div>
+    <div class="space-y-2">
 
-                            <a href="tel:+918554817294"
-                                class="text-gray-300 hover:text-[#D4AF37] transition duration-300">
+        <a href="tel:+918554817294"
+            class="block text-gray-300 hover:text-[#D4AF37] transition duration-300">
 
-                                +91 85548 17294
+            +918554817294
 
-                            </a>
+        </a>
 
-                        </div>
+        <a href="tel:+917780231836"
+            class="block text-gray-300 hover:text-[#D4AF37] transition duration-300">
 
-                    </div>
+            +917780231836
+
+        </a>
+
+    </div>
+
+</div>
 
 
 
