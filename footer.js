@@ -340,5 +340,24 @@ footer.innerHTML = `
     </div>
 
 </footer>
+<a href="https://wa.me/918554817294?text=Hello%20PS%20Global%20Exports"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+      position: fixed;
+      bottom: 80px;
+      right: 15px;
+      width: 55px;
+      height: 55px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+   ">
 
+    <i class="ri-whatsapp-fill" style="color:white;font-size:28px;"></i>
+
+</a>
 `;
